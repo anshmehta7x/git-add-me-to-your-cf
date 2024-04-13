@@ -22,13 +22,15 @@ export default function Video() {
     <>
       <main className="h-screen w-screen bg-[url(/landing-bg.png)] bg-cover ">
         <Navbar />
-        <section className="flex flex-row w-full h-[88vh] border-2 border-red-400 ">
-          <div className="h-full w-[40vw] border-red-400 border-2 flex items-center justify-center">
+        <section className="flex flex-row w-full h-[88vh] ">
+          <div className="h-full w-[40vw]  flex items-center justify-center">
             <img src="/graphic.svg"></img>
           </div>
-          <div className="w-[60vw] p-10 border-red-400 border-2">
-            <div className="rounded-lg backdrop-blur-md text-white bg-white bg-opacity-10 p-5 h-full flex flex-col items-center">
-              <h1 className="text-2xl">How to extract text from the video</h1>
+          <div className="w-[60vw] p-10">
+            <div className="rounded-lg backdrop-blur-md text-white bg-white bg-opacity-10 p-5 h-full flex flex-col items-center pt-8">
+              <h1 className="text-2xl font-bold mb-8">
+                How to extract text from the video
+              </h1>
               <div className="flex flex-row justify-evenly">
                 {steps.map((step, index) => (
                   <Stepcard
