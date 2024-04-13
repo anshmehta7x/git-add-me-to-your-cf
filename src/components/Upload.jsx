@@ -5,16 +5,12 @@ export default function Upload(props) {
 
     useEffect(() => {
         const slider = document.querySelector('.slider');
-        const tooltips = document.querySelectorAll('.absolute span');
+        const labels = document.querySelectorAll('.slider-label');
 
         slider.addEventListener('input', function() {
             const value = this.value;
-            tooltips.forEach((tooltip, index) => {
-                if (index + 1 == value) {
-                    tooltip.style.opacity = '1';
-                } else {
-                    tooltip.style.opacity = '0';
-                }
+            labels.forEach((label, index) => {
+                label.style.opacity = index + 1 === Number(value) ? '1' : '0';
             });
         });
     }, []);
@@ -82,7 +78,7 @@ export default function Upload(props) {
     ];
 
     return (
-        <div className="w-[60vw] p-10">
+        <div className="w-[60vw] p-6">
             <form className="rounded-lg backdrop-blur-md text-white bg-white bg-opacity-10 p-5 h-full flex flex-col items-center pt-8">
                 <h1 className="font-bold text-2xl">Translate {props.type}</h1>
                 <input
@@ -142,17 +138,25 @@ export default function Upload(props) {
                         ))}
                     </select>
                 </div>
-                <div className="w-[80%] relative">
+                <div className={`mb-5 w-[80%] relative ${!props.modes?"hidden":"visible"}`}>
                     <div className="w-[80%] mb-5 ">
                         <h1 className="text-2xl font-bold">Choose the modes</h1>
                     </div>
-                    <input type="range" min="0" max="3" step="1" className="slider appearance-none w-full h-1 bg-gray-300 rounded-full focus:outline-none" />
-                    <div className="absolute top-0 -mt-8 left-0 right-0 text-center">
-                        <span className="inline-block w-20 text-xs bg-gray-800 text-white rounded-lg py-1 px-3 opacity-0 pointer-events-none transition-opacity duration-300">Best Quality</span>
-                        <span className="inline-block w-20 text-xs bg-gray-800 text-white rounded-lg py-1 px-3 opacity-0 pointer-events-none transition-opacity duration-300" style={{ left: '25%' }}>Quality</span>
-                        <span className="inline-block w-20 text-xs bg-gray-800 text-white rounded-lg py-1 px-3 opacity-0 pointer-events-none transition-opacity duration-300" style={{ left: '50%' }}>Performance</span>
-                        <span className="inline-block w-20 text-xs bg-gray-800 text-white rounded-lg py-1 px-3 opacity-0 pointer-events-none transition-opacity duration-300" style={{ left: '75%' }}>Best Performance</span>
+                    <input type="range" min="1" max="4" step="1" className="slider appearance-none w-full h-1 bg-gray-300 rounded-full focus:outline-none" />
+                    <div className="flex justify-between w-full text-xs text-white mt-2">
+                        <span className="slider-label">Best Performance</span>
+                        <span className="slider-label">Performance</span>
+                        <span className="slider-label">Quality</span>
+                        <span className="slider-label">Best Quality</span>
                     </div>
+                </div>
+                <div>
+                <input 
+                    type="submit" 
+                    value="Translate" 
+                    className=" text-white font-bold py-2 px-10 rounded focus:outline-none focus:shadow-outline"     
+                    style={{ 'background': 'linear-gradient(to right, #003B41, #3597AE)'}}
+                />
                 </div>
             </form>
         </div>
