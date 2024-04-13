@@ -24,11 +24,11 @@ export default function Landing() {
               </button>
             </Link>
           </div>
-          <div className="w-1/2 p-36">
+          <div className="w-1/2 p-32 overflow-visible">
             <img
               src="/graphic.svg"
               alt="graphic"
-              className="w-full h-full object-cover"
+              className="w-full h-full"
             />
           </div>
         </section>
