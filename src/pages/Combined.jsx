@@ -71,7 +71,7 @@ const supportedDestinations = [
   },
 ];
 
-export default function Video() {
+export default function Combined() {
   const fileInputRef = useRef(null);
 
   const handleFileInputChange = (e) => {

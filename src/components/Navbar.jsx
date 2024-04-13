@@ -19,13 +19,40 @@ export default function Navbar() {
             About
           </li>
         </Link>
+        <Link to="/transcript">
+          <li
+            className={`${
+              pathname === "/transcript" ? "text-cyan" : ""
+            } mx-3 text-xl`}
+          >
+            Get Transcript
+          </li>
+        </Link>
         <Link to="/video">
           <li
             className={`${
               pathname === "/video" ? "text-cyan" : ""
             } mx-3 text-xl`}
           >
-            Video
+            Get Video
+          </li>
+        </Link>
+        <Link to="/audio">
+          <li
+            className={`${
+              pathname === "/audio" ? "text-cyan" : ""
+            } mx-3 text-xl`}
+          >
+            Get Audio
+          </li>
+        </Link>
+        <Link to="/combined">
+          <li
+            className={`${
+              pathname === "/combined" ? "text-cyan" : ""
+            } mx-3 text-xl`}
+          >
+            Get Both Combined
           </li>
         </Link>
       </ul>
