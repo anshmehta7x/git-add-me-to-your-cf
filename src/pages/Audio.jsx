@@ -12,7 +12,7 @@ export default function Audio() {
         <Navbar />
         <section className="flex flex-row w-full h-[88vh] ">
           <Steps/>
-          <Upload/>
+          <Upload type="Audio" modes={false}/>
         </section>
       </main>
     </>

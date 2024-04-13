@@ -1,7 +1,23 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
-export default function Upload() {
+export default function Upload(props) {
     const fileInputRef = useRef(null);
+
+    useEffect(() => {
+        const slider = document.querySelector('.slider');
+        const tooltips = document.querySelectorAll('.absolute span');
+
+        slider.addEventListener('input', function() {
+            const value = this.value;
+            tooltips.forEach((tooltip, index) => {
+            if (index + 1 == value) {
+                tooltip.style.opacity = '1';
+            } else {
+                tooltip.style.opacity = '0';
+            }
+            });
+        });
+    }, []);
 
     const handleFileInputChange = (e) => {
       const file = e.target.files[0];
@@ -67,6 +83,7 @@ export default function Upload() {
 
       return           <div className="w-[60vw] p-10">
       <form className="rounded-lg backdrop-blur-md text-white bg-white bg-opacity-10 p-5 h-full flex flex-col items-center pt-8">
+        <h1 className="font-bold text-2xl">Translate {props.type}</h1>
         <input
           type="text"
           placeholder="Enter Youtube video link"
@@ -123,6 +140,21 @@ export default function Upload() {
             ))}
           </select>
         </div>
+        <div className="w-[80%]">
+             <div className="w-[80%] mb-5 ">
+                <h1 className="text-2xl font-bold">Choose the modes</h1>
+            </div>
+            <input type="range" min="0" max="3" step="1" class="slider appearance-none w-full h-1 bg-gray-300 rounded-full focus:outline-none"/>
+            <div class="absolute top-0 -mt-8 left-0 right-0 text-center">
+                <span class="inline-block w-20 text-xs bg-gray-800 text-white rounded-lg py-1 px-3 opacity-0 pointer-events-none transition-opacity duration-300">Best Performance</span>
+                <span class="inline-block w-20 text-xs bg-gray-800 text-white rounded-lg py-1 px-3 opacity-0 pointer-events-none transition-opacity duration-300">Performance</span>
+                <span class="inline-block w-20 text-xs bg-gray-800 text-white rounded-lg py-1 px-3 opacity-0 pointer-events-none transition-opacity duration-300">Quality</span>
+                <span class="inline-block w-20 text-xs bg-gray-800 text-white rounded-lg py-1 px-3 opacity-0 pointer-events-none transition-opacity duration-300">Best Quality</span>
+            </div>
+
+
+        </div>
+
       </form>
     </div>
 
