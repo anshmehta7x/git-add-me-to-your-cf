@@ -150,7 +150,7 @@ export default function Upload(props) {
                         <span className="slider-label">Best Quality</span>
                     </div>
                 </div>
-                <div>
+                <div className={` ${!props.modes?"mt-10":""}`}>
                 <input 
                     type="submit" 
                     value="Translate" 
