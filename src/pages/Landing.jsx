@@ -24,7 +24,13 @@ export default function Landing() {
               </button>
             </Link>
           </div>
-          <div className="w-1/2"></div>
+          <div className="w-1/2 p-36">
+            <img
+              src="/graphic.svg"
+              alt="graphic"
+              className="w-full h-full object-cover"
+            />
+          </div>
         </section>
       </main>
     </>
