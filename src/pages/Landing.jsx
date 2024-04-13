@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import Loading from "../components/Loading";
 
 export default function Landing() {
   return (
