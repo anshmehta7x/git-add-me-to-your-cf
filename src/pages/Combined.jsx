@@ -11,7 +11,7 @@ export default function Combined() {
         <Navbar />
         <section className="flex flex-row w-full h-[88vh] ">
           <Steps/>
-          <Upload type="Both" modes={true}/>
+          <Upload query="translateav" type="Both" modes={true}/>
         </section>
       </main>
     </>
