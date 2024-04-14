@@ -5,6 +5,7 @@ import Video from "./pages/Video";
 import About from "./pages/About";
 import Combined from "./pages/Combined";
 import Audio from "./pages/Audio";
+import Output from "./pages/Output";
 
 function App() {
   const location = useLocation();
@@ -16,6 +17,7 @@ function App() {
       <Route path="/about" element={<About />} />
       <Route path="/combined" element={<Combined />} />
       <Route path="/audio" element={<Audio />} />
+      <Route path="/output" element={<Output />} />
     </Routes>
   );
 }
