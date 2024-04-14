@@ -8,7 +8,7 @@ export default function Loading() {
       >
         <img src={loading} alt="loading" width={200} height={200} />
         <p className="font-bold text-3xl text-nowrap text-white mt-12">
-          Video Processing...
+          Processing...
         </p>
       </div>
     </>
