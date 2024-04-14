@@ -21,7 +21,7 @@ export default function Landing() {
                 }}
                 className="my-10 text-2xl px-10 py-2 rounded-xl"
               >
-                Try Lorem Ipsum
+                Try ScriptSync
               </button>
             </Link>
           </div>
